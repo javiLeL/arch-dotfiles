@@ -40,9 +40,9 @@ For use this you must install **picom-ftlabs-git** picom version *(For animation
 
 > Nvim configuration in my github 
 
-| nvim  | code  |
-| ----- | ----- |
-| `img` | `img` |
+| nvim                                                                                                               | code                                                                                                               |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| ![](https://github.com/javiLeL/arch-dotfiles/blob/main/Pictures/Captures/Capture_25-04-2024_19:28:23.png?raw=true) | ![](https://github.com/javiLeL/arch-dotfiles/blob/main/Pictures/Captures/Capture_25-04-2024_19:29:08.png?raw=true) |
 
 ## File Explorer
 
