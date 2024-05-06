@@ -25,7 +25,7 @@ For use this you must install **picom-ftlabs-git** picom version *(For animation
 
 > Dunst is the notification daemon how I decided install because it is very lightweight
 
-| Low                                                                                                                | Normal                                                                                                             | Crittcal                                                                                                           |
+| Low                                                                                                                | Normal                                                                                                             | Critical                                                                                                           |
 | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
 | ![](https://github.com/javiLeL/arch-dotfiles/blob/main/Pictures/Captures/Capture_25-04-2024_19:03:22.png?raw=true) | ![](https://github.com/javiLeL/arch-dotfiles/blob/main/Pictures/Captures/Capture_25-04-2024_19:03:36.png?raw=true) | ![](https://github.com/javiLeL/arch-dotfiles/blob/main/Pictures/Captures/Capture_25-04-2024_19:03:03.png?raw=true) |
 ## Rofi 
