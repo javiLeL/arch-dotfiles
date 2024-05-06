@@ -78,7 +78,7 @@
     progress_bar_min_width = 150
 
     # Set the maximum width for the progress bar
-    progress_bar_max_width = 300
+    progress_bar_max_width = 200
 
     # Corner radius for the progress bar. 0 disables rounded corners.
     progress_bar_corner_radius = 5
@@ -237,7 +237,7 @@
     max_icon_size = 64
 
     # Paths to default icons (only neccesary when not using recursive icon lookup)
-    icon_path = /usr/share/icons/TokyoNight-SE/24x24/actions/
+    icon_path = /usr/share/icons/TokyoNight-SE/64x64/actions/:/home/javilel/.icons
 
     ### History ###
 
@@ -273,7 +273,7 @@
     corner_radius = 5
 
     # Bar color
-    highlight = "#209e20"
+    highlight = "#7aa2f7"
 
     # Ignore the dbus closeNotification message.
     # Useful to enforce the timeout set by dunst configuration. Without this
@@ -342,7 +342,7 @@
     foreground = "#ffffff"
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
-    default_icon = bell
+    default_icon = bell-custom
 
 [urgency_normal]
     frame_color = "#565f89"
@@ -350,7 +350,7 @@
     foreground = "#ffffff"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
-    default_icon = bell
+    default_icon = bell-custom 
 
 [urgency_critical]
     background = "#c53b53"
@@ -485,6 +485,7 @@
     appname = "some_trackpad_notifiers"
     set_stack_tag = "trackpad"
     alignment = center
+    default_icon = 
 [stack-volumes]
     appname = "some_volume_notifiers"
     set_stack_tag = "volume"

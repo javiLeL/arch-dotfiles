@@ -70,6 +70,9 @@ super + {_,shift + }c
 super + bracket{left,right}
 	bspc desktop -f {prev,next}.local
 
+super + n
+	bspc desktop -f next.local
+
 # focus the last node/desktop
 super + {grave,Tab}
 	bspc {node,desktop} -f last
@@ -105,6 +108,26 @@ super + ctrl + shift + space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
 #
+# receptacles
+#
+
+# remove all receptacle
+super + shift + i
+	for win in `bspc query -N -n .leaf.\!window` ; do bspc node $win -k ; done;
+
+# insert receptacle
+super + alt + ctrl + {h,j,k,l}
+	bspc node --presel-dir {west,south,north,east} -i
+
+# balance nodes
+super + e
+	bspc node @/ -B
+
+# move to receptacle
+super + r
+	bspc node $(bspc query -N -n focused) -n $(bspc query -N -n .leaf.\!window)
+
+#
 # move/resize
 #
 
@@ -123,3 +146,26 @@ super + {Left,Down,Up,Right}
 # make screnshot imagemagick
 super + shift + r
 	import $(echo $HOME/Pictures/Captures/$(date +'Capture_%d-%m-%Y_%H:%M:%S.png'))
+
+
+# togle trackpad
+super + F10
+	trackpad-toggle
+
+# brightness
+# brightness down
+XF86MonBrightnessDown
+	brightness down
+# brightness up
+XF86MonBrightnessUp
+	brightness up
+
+# volumen 
+XF86AudioMute
+	volumen mute
+# volumen down
+XF86AudioLowerVolume
+	volumen down
+# volumen up
+XF86AudioRaiseVolume
+	volumen up 
