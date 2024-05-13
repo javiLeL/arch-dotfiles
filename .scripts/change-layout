@@ -1,0 +1,42 @@
+#!/bin/sh
+#
+#   ▄▄▄██▀▀▀ ▄▄▄       ██▒   █▓ ██▓      ██▓    ▓█████  ██▓    
+#     ▒██   ▒████▄    ▓██░   █▒▓██▒     ▓██▒    ▓█   ▀ ▓██▒    
+#     ░██   ▒██  ▀█▄   ▓██  █▒░▒██▒     ▒██░    ▒███   ▒██░    
+#  ▓██▄██▓  ░██▄▄▄▄██   ▒██ █░░░██░     ▒██░    ▒▓█  ▄ ▒██░    
+#   ▓███▒    ▓█   ▓██▒   ▒▀█░  ░██░ ██▓ ░██████▒░▒████▒░██████▒
+#   ▒▓▒▒░    ▒▒   ▓▒█░   ░ ▐░  ░▓   ▒▓▒ ░ ▒░▓  ░░░ ▒░ ░░ ▒░▓  ░
+#   ▒ ░▒░     ▒   ▒▒ ░   ░ ░░   ▒ ░ ░▒  ░ ░ ▒  ░ ░ ░  ░░ ░ ▒  ░
+#   ░ ░ ░     ░   ▒        ░░   ▒ ░ ░     ░ ░      ░     ░ ░   
+#   ░   ░         ░  ░      ░   ░    ░      ░  ░   ░  ░    ░  ░
+#                          ░         ░                         
+#
+# Set the file to operate
+DATAFILE=$HOME/.config/actual.data
+OLDMODE=$(cat $DATAFILE | grep keyboard-layout | sed 's/keyboard-layout=//')
+case $# in
+    0)
+		NEWMODE='us'
+		case $OLDMODE in
+			es)
+				NEWMODE='us'
+			;;
+			us)
+				NEWMODE='es'
+			;;
+		esac
+		setxkbmap -layout $NEWMODE
+		sed -i "s/$OLDMODE/$NEWMODE/" $DATAFILE
+	;;
+    1)
+		case $1 in
+			rest)
+				setxkbmap -layout $OLDMODE
+			;;
+			*)
+				echo Error comand not found
+			;;
+		esac
+	;;
+esac
+
