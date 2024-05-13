@@ -147,7 +147,6 @@ super + {Left,Down,Up,Right}
 super + shift + r
 	import $(echo $HOME/Pictures/Captures/$(date +'Capture_%d-%m-%Y_%H:%M:%S.png'))
 
-
 # togle trackpad
 super + F10
 	trackpad-toggle
@@ -169,3 +168,8 @@ XF86AudioLowerVolume
 # volumen up
 XF86AudioRaiseVolume
 	volumen up 
+
+# change keyboard layout
+super + @k
+	change-layout
+
