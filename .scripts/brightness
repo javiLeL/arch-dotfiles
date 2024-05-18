@@ -18,7 +18,7 @@ down(){
     fi 
     brightnessctl s "$TODOWN%-" 
 }
-add(){
+up(){
     TOADD=5
     if [ $1 != "" ]; then
         TOADD=$1
@@ -32,50 +32,33 @@ Usage Options:
 Syntaxis: [option] <arguments>
         
         -h      --help          Display this text mensaje
-        -a      --add           By default add 5
-        -d      --down          By default down 5
+        -u      --up            By default up brightness 5
+        -d      --down          By default down brightness 5
 
 EOF
 }
-if [ "$#" == "0" ]; then
+error(){
     cat << EFO
 Usage -h or --help for more information 
 EFO
+}
+if [ "$#" == "0" ]; then
+    error
 else        
-    while getopts "had:-:" flags; do
+    while getopts "hud-:" flags; do
         case "$flags" in
             -)
                 case "${OPTARG}" in
-                    help)
-                        print_usage | cat
-                        exit 1
-                    ;;
-                    add) 
-                        shift
-                        add "$1"
-                    ;;
-                    down)  
-                        shift
-                        down $1
-                    ;;
-                    *) break ;;
+                    help) print_usage; exit 1 ;;
+                    up) shift ; up "$1" ;;
+                    down) shift; down $1 ;;
+                    *) error; exit 1 ;;
                 esac
             ;; 
-            h)
-                print_usage
-                exit 1
-            ;;
-            a)
-                shift
-                add "$1"
-            ;;
-            d)
-                shift
-                down "$1"
-            ;;
-            *)
-                break 
-            ;;
+            h) print_usage; exit 1 ;;
+            u) shift; up "$1" ;; 
+            d) shift; down "$1" ;;
+            *) error; exit 1 ;;
         esac
     done
     # Get the percen of brightness
