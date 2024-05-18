@@ -10,40 +10,74 @@
 #   ░ ░ ░     ░   ▒        ░░   ▒ ░ ░     ░ ░      ░     ░ ░   
 #   ░   ░         ░  ░      ░   ░    ░      ░  ░   ░  ░    ░  ░
 #                          ░         ░                         
+up(){
+    TOUP=5
+    if [ "$1" != "" ]; then
+        TOUP=$1
+    fi
+	pamixer -i "$TOUP"
+}
+down(){
+    TODOWN=5
+    if [ "$1" != "" ]; then
+        TODOWN=$1
+    fi
+	pamixer -d "$TODOWN"
+}
+mute(){
+    pamixer -t
+}
+print_usage(){
+    cat<<EOF
+Usage Options:
 
-case $1 in
-up)
-	pamixer -i 5
-	;;
-down)
-	pamixer -d 5
-	;;
-mute)
-	pamixer -t
-esac
+Syntaxis: [option] <arguments>
+        
+        -h      --help          Display this text mensaje
+        -u      --up            By default up volume 5
+        -d      --down          By default down volume 5
+        -m      --mute          Togle mute
+
+EOF
+}
+error(){
+    cat << EFO
+Usage -h or --help for more information 
+EFO
+
+}
+if [ "$#" == "0" ]; then
+    error
+else 
+    while getopts "hudm-:" flags; do
+        case "$flags" in
+            -)
+                case "${OPTARG}" in
+                    help) print_usage; exit 1 ;;
+                    up) shift; up $1 ;;
+                    down) shift; down $1 ;;
+                    mute) mute ;;
+                    *) error; exit 1 ;;
+                esac
+            ;;
+            h) print_usage; exit 1 ;;
+            u) shift; up $1 ;;
+            d) shift; down $1 ;;
+            m) mute ;;
+            *) error; exit 1 ;;
+        esac
+    done
+fi
 
 volume=$(pamixer --get-volume)
 isMute=$(pamixer --get-mute)
-icon=("volumeMute"
-      "volumeOff"
-      "volumenLow" 
-      "volumeMedium"
-      "volumeHigh")
-
-
-if [ "$isMute" = "true" ]; then
-	dunstify -i ${icon[0]} -a some_volume_notifiers -t 1000 "Mute ![$volume]" -h int:value:$volume -h string:synchronous:'$bar' --replace=555
+icon=(volume-mute volume-off volume-low volume-medium volume-high)
+if [ "$isMute" == "true" ]; then 
+    dunstify -i ${icon[0]} -a some_volume_notifiers -t 1000 "Mute ![$volume]" -h int:value:$volume -h string:synchronous:'$bar' --replace=555
+elif [[ $volme -eq 0 ]]; then
+    iconNum=1
+    dunstify -i ${icon[$iconNum]} "Volume = $volume" -a some_volume_notifiers -t 1000 -h int:value:$volume -h string:synchronous:'$bar' --replace=555
 else
-	iconNum=0;
-	if [ $volume = 0 ]; then
-		iconNum=1
-	elif [ $volume -gt 0 ] && [ $volume -le 10 ]; then
-		iconNum=2
-	elif [ $volume -gt 10 ] && [ $volume -le 50 ]; then
-		iconNum=3
-	elif [ $volume -gt 50 ] && [ $volume -le 100 ]; then
-		iconNum=4
-	fi
-
-	dunstify -i ${icon[$iconNum]} "Volume = $volume" -a some_volume_notifiers -t 1000 -h int:value:$volume -h string:synchronous:'$bar' --replace=555
+    iconNum=$(( ((($volme*(${#icon[@]}-3)/10)+5)/10)+3 ))
+    dunstify -i ${icon[$iconNum]} "Volume = $volume" -a some_volume_notifiers -t 1000 -h int:value:$volume -h string:synchronous:'$bar' --replace=555
 fi
