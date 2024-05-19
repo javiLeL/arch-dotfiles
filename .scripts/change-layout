@@ -13,30 +13,48 @@
 #
 # Set the file to operate
 DATAFILE=$HOME/.config/actual.data
-OLDMODE=$(cat $DATAFILE | grep keyboard-layout | sed 's/keyboard-layout=//')
-case $# in
-    0)
-		NEWMODE='us'
-		case $OLDMODE in
-			es)
-				NEWMODE='us'
-			;;
-			us)
-				NEWMODE='es'
-			;;
-		esac
-		setxkbmap -layout $NEWMODE
-		sed -i "s/$OLDMODE/$NEWMODE/" $DATAFILE
-	;;
-    1)
-		case $1 in
-			rest)
-				setxkbmap -layout $OLDMODE
-			;;
-			*)
-				echo Error comand not found
-			;;
-		esac
-	;;
-esac
+LAYOUTS=(es us)
+OLDLAYOUT=$(cat $DATAFILE | grep keyboard-layout | sed 's/keyboard-layout=//' )
+print_usage(){
+    cat<<EOF
+Usage Options:
 
+Syntaxis: [options] 
+
+        -h      --help                      Display this text mensaje
+        -n      --next                      Load the next layout 
+        -r      --rest                      Load the layout actual
+
+EOF
+}
+error(){
+    echo 'Usage -h or --help for more information' 
+}
+next(){
+    LAYOUT=$(( ($OLDLAYOUT+1)%(${#LAYOUTS[@]})))
+    setxkbmap -layout ${LAYOUTS[$LAYOUT]}
+	sed -i "s/$OLDLAYOUT/$LAYOUT/" $DATAFILE
+    dunstify -i "keyboard" "Keyboard Layout" "${LAYOUTS[$LAYOUT]}" -a keyboard_notifiers -t 1500 --replace=555
+}
+rest(){
+    setxkbmap -layout ${LAYOUTS[$OLDLAYOUT]}
+}
+if [ "$#" == "0" ]; then
+    error
+else        
+    while getopts "hnr-:" flags; do
+        case "$flags" in
+            -)
+                case "${OPTARG}" in
+                    help) print_usage; exit 1 ;;
+                    next) next ;;
+                    rest) rest ;;
+                esac
+            ;;
+            h) print_usage; exit 1;;
+            n) next ;;
+            r) rest ;;
+            *) error ;;
+        esac
+    done
+fi

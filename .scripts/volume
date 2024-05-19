@@ -41,10 +41,7 @@ Syntaxis: [option] <arguments>
 EOF
 }
 error(){
-    cat << EFO
-Usage -h or --help for more information 
-EFO
-
+    echo Usage -h or --help for more information 
 }
 if [ "$#" == "0" ]; then
     error

@@ -154,22 +154,21 @@ super + F10
 # brightness
 # brightness down
 XF86MonBrightnessDown
-	brightness down
+	brightness -d
 # brightness up
 XF86MonBrightnessUp
-	brightness up
+	brightness -u
 
 # volumen 
 XF86AudioMute
-	volumen mute
+	volume -m
 # volumen down
 XF86AudioLowerVolume
-	volumen down
+	volume -d
 # volumen up
 XF86AudioRaiseVolume
-	volumen up 
+	volume -u
 
 # change keyboard layout
 super + @k
-	change-layout
-
+	change-layout -n
