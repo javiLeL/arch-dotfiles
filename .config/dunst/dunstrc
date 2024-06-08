@@ -342,7 +342,7 @@
     foreground = "#ffffff"
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
-    default_icon = bell-custom
+    default_icon = bell
 
 [urgency_normal]
     frame_color = "#565f89"
@@ -350,7 +350,7 @@
     foreground = "#ffffff"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
-    default_icon = bell-custom 
+    default_icon = bell 
 
 [urgency_critical]
     background = "#c53b53"
