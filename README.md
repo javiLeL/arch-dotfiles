@@ -6,7 +6,7 @@
 
 ## Picom
 
-For use this you must install **picom-ftlabs-git** picom version _(For animations)_ \*You can find it in **AUR\***.
+For use this you must install **picom-ftlabs-git** picom version _(For animations)_ *You can find it in **AUR***.
 
 > Add windows animation and blur effect.
 
