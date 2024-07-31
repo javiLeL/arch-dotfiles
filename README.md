@@ -50,9 +50,15 @@ For use this you must install **picom-ftlabs-git** picom version _(For animation
 
 ## File Explorer
 
-> Actually I am using `Nemo` as my main file explorer. But previously I was using `ranger` is easier to handle with a gui
+> Actually I am using `nemo` as my main file explorer. But previously I was using `ranger` is easier to handle with a gui
 
-> Other good option is `nautilus` but it puts the closing bar to close and increase and I dont like this
+> If use nemo and decide change the terminal you can use the command:
+
+```shell
+gsettings set org.cinnamon.desktop.default-applications.terminal exec kitty
+```
+
+> Where `kitty` is your terminal
 
 ## Dependences
 
@@ -72,6 +78,7 @@ For use this you must install **picom-ftlabs-git** picom version _(For animation
 - Neovim & VScode (Text Editors)
 - Nitrogen (Walpaper Manager)
 - Picom (Transparence)
+- Polkit-gnome (nemo as root)
 - Polybar (Task Bar)
 - Pqiv (Imagen Viewer)
 - Rofi (Application table)

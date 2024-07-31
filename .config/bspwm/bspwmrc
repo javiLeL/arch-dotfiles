@@ -18,6 +18,8 @@ nitrogen --restore
 
 trackpad-toggle rest
 
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
 # pick up the number of screens
 SCREENS=$(xrandr | grep -w connected | wc -l)
 if [[ $SCREENS -eq 1 ]]; then
