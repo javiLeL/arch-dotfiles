@@ -21,11 +21,11 @@ return {
       end
     end,
   },
-  {
-    "williamboman/mason-lspconfig.nvim",
-    config = function()
-      require("mason-lspconfig").setup({
-        ensure_installed = {
+  --{
+    -- "williamboman/mason-lspconfig.nvim",
+    -- config = function()
+    --  require("mason-lspconfig").setup({
+    --    ensure_installed = {
           -- "tsserver",
           -- "volar",
           -- "tailwindcss",
@@ -35,22 +35,22 @@ return {
           -- "emmet_ls",
           -- "graphql",
           -- "astro",
-          "lua_ls",
+          -- "lua_ls",
           -- "pyright",
           -- "denols",
           -- "rust_analyzer",
           -- "gopls",
           -- "jdtls",
           -- "eslint",
-          "jsonls",
+          -- "jsonls",
           -- "marksman",
           -- "html",
-          "bashls",
+          -- "bashls",
           -- "intelephense",
           -- "htmx",
-        },
-        automatic_installation = true,
-      })
-    end,
-  },
+    --    },
+    --    automatic_installation = true,
+    --  })
+    -- end,
+  -- },
 }

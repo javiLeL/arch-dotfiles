@@ -80,6 +80,7 @@ ZSH_THEME="robbyrussell"
 plugins=(git
 zsh-autosuggestions
 zsh-syntax-highlighting
+sudo
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -112,6 +113,18 @@ source $ZSH/oh-my-zsh.sh
 alias ls="lsd"
 alias cat="bat"
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+alias rsync-copy="rsync -avz --progress -h"
+alias rsync-move="rsync -avz --progress -h --remove-source-files"
+alias rsync-update="rsync -avzu --progress -h"
+alias rsync-synchronize="rsync -avzu --delete --progress -h"
+alias nv="nvim"
+
+function rmk(){
+    scrub -p dod $1
+    shred -zun 10 -v $1
+}
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
