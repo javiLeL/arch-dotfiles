@@ -118,6 +118,8 @@ alias rsync-move="rsync -avz --progress -h --remove-source-files"
 alias rsync-update="rsync -avzu --progress -h"
 alias rsync-synchronize="rsync -avzu --delete --progress -h"
 alias nv="nvim"
+alias tmux='tmux attach-session -t 0 2>/dev/null || tmux'
+alias pipes='pipes.sh -p 2 -t 1 -B'
 
 function rmk(){
     scrub -p dod $1
