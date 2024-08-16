@@ -170,5 +170,5 @@ XF86AudioRaiseVolume
 	volume -u
 
 # change keyboard layout
-super + @k
+super + shift + @l
 	change-layout -n
