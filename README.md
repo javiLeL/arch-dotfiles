@@ -66,6 +66,7 @@ gsettings set org.cinnamon.desktop.default-applications.terminal exec kitty
 - Alsa (Volumen)
   - Pamixer
   - Pulseaudio
+- Betterlockscreen (Lock Screen)
 - Brightnessctl (Brightnes manager)
 - Bspwm (Windows manager)
 - Dunst (Notifications)
