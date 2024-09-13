@@ -70,4 +70,4 @@ bspc config presel_border_color "#7aa2f7"
 # bspc rule -a Kupfer.py focus=on
 # bspc rule -a Screenkey manage=off
 
-bspc rule -a feh state=floating
+bspc rule -a feh state=floating center=on rectangle=480x360+0+0
