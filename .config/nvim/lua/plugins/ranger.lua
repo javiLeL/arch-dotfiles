@@ -13,8 +13,8 @@ return {
         },
         ui = {
             border = "none",
-            height = 1,
-            width = 1,
+            height = .75,
+            width = .75,
             x = 0.5,
             y = 0.5,
         }

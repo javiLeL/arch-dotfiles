@@ -1,10 +1,14 @@
 return {
   "akinsho/bufferline.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },
-  version = "*",
   opts = {
     options = {
-		diagnostics = "lsp",
+		diagnostics = "nvim_lsp",
+		separator_style = "slope",
+		diagnostics_indicator = function(count, level, diagnostics_dict, context)
+            local icon = level:match("error") and " " or " "
+            return " " .. icon .. count
+        end,
         mode = "buffers",
         -- mode = "tabs",
             offsets = {
