@@ -4,7 +4,9 @@ return {
   version = "*",
   opts = {
     options = {
+		diagnostics = "lsp",
         mode = "buffers",
+        -- mode = "tabs",
             offsets = {
                 {
                     filetype = "NvimTree",
@@ -13,11 +15,11 @@ return {
                     separator = true,
                 },
             },
-        hover = {
-            enabled = true,
-            delay = 150,
-            reveal = {'close'}
-        }
+       -- hover = {
+       --     enabled = true,
+       --     delay = 150,
+       --     reveal = {'close'}
+       -- }
     },
   },
 }
