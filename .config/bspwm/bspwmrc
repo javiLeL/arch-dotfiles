@@ -8,9 +8,6 @@ sxhkd &
 pkill picom
 picom &
 
-pkill mpd
-mpd &
-
 xsetroot -cursor_name left_ptr
 feh --bg-fill --randomize ~/Pictures/backgrounds/*
 
@@ -71,3 +68,4 @@ bspc config presel_border_color "#7aa2f7"
 # bspc rule -a Screenkey manage=off
 
 bspc rule -a feh state=floating center=on rectangle=480x360+0+0
+# bspc rule -a hidamari state=fullscreen
