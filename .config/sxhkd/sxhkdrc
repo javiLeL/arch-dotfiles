@@ -144,8 +144,12 @@ super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 # make screnshot imagemagick
-super + shift + r
+super + @r
 	import $(echo $HOME/Pictures/Captures/$(date +'Capture_%Y-%m-%d_%H:%M:%S.png'))
+
+# make screnshot imagemagick in clipboard
+super + shift + r
+	import png:- | xclip -selection clipboard -t image/png
 
 # togle trackpad
 super + F10

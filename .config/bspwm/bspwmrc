@@ -8,8 +8,10 @@ sxhkd &
 pkill picom
 picom &
 
+clipster -d
+
 xsetroot -cursor_name left_ptr
-feh --bg-fill --randomize ~/Pictures/backgrounds/*
+feh --bg-fill ~/Pictures/backgrounds/moderboard-blueprints-racoon.png
 
 trackpad-toggle rest
 
