@@ -145,7 +145,7 @@ super + {Left,Down,Up,Right}
 
 # make screnshot imagemagick
 super + shift + r
-	import $(echo $HOME/Pictures/Captures/$(date +'Capture_%d-%m-%Y_%H:%M:%S.png'))
+	import $(echo $HOME/Pictures/Captures/$(date +'Capture_%Y-%m-%d_%H:%M:%S.png'))
 
 # togle trackpad
 super + F10
