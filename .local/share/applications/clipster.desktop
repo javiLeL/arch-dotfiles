@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Clipster
+Exec=clipster -s -p
+Terminal=false
+Type=Application
+Comment=Clipboard Manager
+Categories=Utility;
+Icon=com.github.davidmhewitt.clipped

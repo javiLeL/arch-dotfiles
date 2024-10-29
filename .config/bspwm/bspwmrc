@@ -8,7 +8,7 @@ sxhkd &
 pkill picom
 picom &
 
-clipster -d &
+clipster -d -f $HOME/.config/clipster/ &
 
 xsetroot -cursor_name left_ptr
 feh --bg-fill ~/Pictures/backgrounds/moderboard-blueprints-racoon.png
