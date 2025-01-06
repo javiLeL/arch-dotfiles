@@ -5,10 +5,12 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 pkill sxhkd
 sxhkd &
 
-pkill picom
-picom &
+# pkill picom
+# picom &
 
 clipster -d -f $HOME/.config/clipster/ &
+
+wmname LG3D
 
 xsetroot -cursor_name left_ptr
 feh --bg-fill ~/Pictures/backgrounds/moderboard-blueprints-racoon.png

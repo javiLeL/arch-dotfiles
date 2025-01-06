@@ -10,5 +10,7 @@ keymap("n", "<leader>B", "<cmd>BufferLineMovePrev<CR>", { desc = "Move to prev b
 keymap("n", "<leader>n", "<cmd>BufferLineCycleNext<CR>", { desc = "Select the next buffer" })
 keymap("n", "<leader>b", "<cmd>BufferLineCyclePrev<CR>", { desc = "Select the prev buffer" })
 keymap("n", "<leader>y", "<cmd>\"+y<CR>", { desc = "Copy the content to the clipboard" })
+keymap({ "n", "v" }, "<leader>y", [["+y]])
+keymap("n", "<leader>Y", [["+Y]])
 -- keymap("i", "<c-a>", "<c-o>o")         -- adds new line below (insert)
 -- keymap("i", "<c-s-a>", "<c-o>O")         -- adds new line below (insert)

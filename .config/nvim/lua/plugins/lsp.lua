@@ -5,11 +5,9 @@ return {
 		config = function()
 			-- Setup All language
 			local lsp = require("lspconfig")
-			lsp.bashls.setup({})
 			lsp.lua_ls.setup({})
 			lsp.jdtls.setup({})
-			lsp.bashls.setup({})
-			-- lsp.shellcheck.setup({})
+			-- lsp.bashls.setup({})
 			-- Get info about function
 			vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
 			-- Setup neovim lua configuration

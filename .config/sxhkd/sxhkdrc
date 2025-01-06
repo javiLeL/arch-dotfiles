@@ -144,11 +144,11 @@ super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 # make screnshot imagemagick
-super + @r
+super + @p
 	import $(echo $HOME/Pictures/Captures/$(date +'Capture_%Y-%m-%d_%H:%M:%S.png'))
 
 # make screnshot imagemagick in clipboard
-super + shift + r
+super + shift + p
 	import png:- | xclip -selection clipboard -t image/png
 
 # togle trackpad
@@ -172,7 +172,9 @@ XF86AudioLowerVolume
 # volumen up
 XF86AudioRaiseVolume
 	volume -u
-
+# open calculator 
+XF86Calculator
+	rofi -show calc
 # change keyboard layout
 super + shift + @c
 	change-layout -n

@@ -25,3 +25,4 @@ vim.opt.cursorline = true
 vim.opt.hidden = true
 
 vim.set = nocompatible
+vim.api.nvim_set_option("clipboard","unnamedplus")
