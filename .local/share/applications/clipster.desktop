@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Clipster
-Exec=clipster -s -p
+Exec=clipster -s -c
 Terminal=false
 Type=Application
 Comment=Clipboard Manager
