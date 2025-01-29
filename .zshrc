@@ -118,14 +118,15 @@ alias rsync-move="rsync -avz --progress -h --remove-source-files"
 alias rsync-update="rsync -avzu --progress -h"
 alias rsync-synchronize="rsync -avzu --delete --progress -h"
 alias nv="nvim"
-alias tmux='tmux attach-session -t 0 2>/dev/null || tmux'
+# alias tmux='tmux attach-session -t 0 2>/dev/null || tmux'
 alias pipes='pipes.sh -p 2 -t 1 -B'
-
+alias lsblk='lsblk -o +uuid,name'
+alias weather='curl wttr.in'
+alias ip='ip --color=auto'
 function rmk(){
     scrub -p dod $1
-    shred -zun 10 -v $1
+    shred -zun 2 -v $1
 }
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
