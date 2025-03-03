@@ -34,7 +34,7 @@ next(){
     LAYOUT=$(( ($OLDLAYOUT+1)%(${#LAYOUTS[@]})))
     setxkbmap -layout ${LAYOUTS[$LAYOUT]}
 	sed -i "s/$OLDLAYOUT/$LAYOUT/" $DATAFILE
-    dunstify -i "keyboard" "Keyboard Layout" "${LAYOUTS[$LAYOUT]}" -a keyboard_notifiers -t 1500 --replace=555
+    notify-send -i "keyboard" "Keyboard Layout" "${LAYOUTS[$LAYOUT]}" -a keyboard_notifiers -t 1500 -r 555
 }
 rest(){
     setxkbmap -layout ${LAYOUTS[$OLDLAYOUT]}

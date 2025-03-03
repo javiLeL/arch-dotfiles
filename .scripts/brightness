@@ -65,5 +65,5 @@ else
     icon=(brightness-1 brightness-2 brightness-3 brightness-4 brightness-5 brightness-6 brightness-7)
     # With the past icons you take the one you need with respect to percentage
     iconNum=$(( ((($porcent*(${#icon[@]}-1)/10)+5)/10) ))
-    dunstify -i "${icon[$iconNum]}" "Brightnes = $porcent" -a some_volume_notifiers -t 1000 -h int:value:$porcent -h string:synchronous:'$bar' --replace=555
+    notify-send -i "${icon[$iconNum]}" "Brightnes = $porcent" -a some_volume_notifiers -t 1000 -h int:value:$porcent -h string:synchronous:'$bar' -r 555
 fi
