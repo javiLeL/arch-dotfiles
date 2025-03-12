@@ -126,6 +126,7 @@ function rmk(){
     scrub -p dod $1
     shred -zun 2 -v $1
 }
+alias fastfetch='fastfetch -l /home/javilel/.config/fastfetch/logo'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # end=$(tput cup 9999 0)
