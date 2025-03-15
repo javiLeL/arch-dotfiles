@@ -39,7 +39,7 @@ for i in "${wificonnected[@]}"; do
 done
 
 if [ $count -le 1 ]; then
-	echo "%{T3}${icon[0]}"
+	echo "%{T5} %{T3}${icon[0]}"
 else
 	for (( i=0; i<$(( "${#wificonnected[@]}" + ${#ethernetconnected[@]})); i++)); do
 		echo -n "[%{T-}%{F#C5C8C6}${name[$i]}:%{T3}%{F#c3e88d}${icon[$i]}]"
