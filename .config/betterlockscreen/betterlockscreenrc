@@ -1,0 +1,70 @@
+# ~/.config/betterlockscreenrc
+
+# default options
+display_on=0
+span_image=false
+lock_timeout=300
+fx_list=(dim blur dimblur pixel dimpixel color)
+dim_level=40
+blur_level=1
+pixel_scale=10,1000
+solid_color=333333
+wallpaper_cmd="feh --bg-fill"
+quiet=false
+
+# javilel theme
+loginbox=ffffff
+loginshadow=ffffff
+font="JetBrainsMono Nerd Font"
+
+# Ring settings
+ringcolor=c0caf5 		# normal
+ringvercolor=c0caf5 	# verifying
+ringwrongcolor=c0caf5 	# worng
+## Color of arc of ring
+keyhlcolor=394b70 		# write
+bshlcolor=c53b53		# delete
+## Color of inside 
+insidecolor=00000000 	# normal
+insidevercolor=bb9af7 	# verifying
+insidewrongcolor=ff007c	# worng
+
+# ?
+separatorcolor=ffffff
+
+# clock settings
+timecolor=c3e88d
+time_format="%H:%M"
+
+# locktext
+greetercolor=ffc777
+locktext="Type password..."
+
+# ?
+layoutcolor=ffffff
+
+# Verifying settings
+veriftext="Verifying..."
+verifcolor=9d7cd8
+
+# Worng password settings
+wrongtext="Failure!"
+wrongcolor=ff007c
+
+# ?
+modifcolor=ffffff
+
+# bg of imagen background
+bgcolor=00000000
+
+
+#
+# expert options (change at own risk!)
+#
+
+# i3lockcolor_bin="i3lock-color"      # Manually set command for i3lock-color
+# suspend_command="systemctl suspend" # Manually change action e.g. hibernate/suspend-command
+
+# i3lock-color - custom arguments
+# lockargs=() 						  # overwriting default "(-n)"
+# lockargs+=(--ignore-empty-password) # appending new argument
