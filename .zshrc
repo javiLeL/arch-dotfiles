@@ -126,6 +126,34 @@ function rmk(){
     scrub -p dod $1
     shred -zun 2 -v $1
 }
+function matrixeffect() {
+	for (( i=0; i<${#1}; i++)); do
+		if [ $i -eq $((${#1} - 1)) ]; then
+			echo "${1:$i:1}"
+		else
+			echo -n "${1:$i:1}"
+			sleep $2
+		fi
+	done
+}
+function pcupdate(){
+	# update packages
+	matrixeffect 'Update Packages' .1
+	matrixeffect 'loading...' .1
+	sudo pacman -Syu
+	yay -Syu
+
+	# delete packages
+	matrixeffect 'Delete Orphan Packages' .1
+	matrixeffect 'loading...' .1
+	sudo pacman -Rns $(pacman -Qtdq)
+
+	# clear cache
+	matrixeffect 'Clean Cache' .1
+	matrixeffect 'loading...' .1
+	sudo pacman -Sc
+	rm -rf $HOME/.cache/
+}
 alias fastfetch='fastfetch -l /home/javilel/.config/fastfetch/logo'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
